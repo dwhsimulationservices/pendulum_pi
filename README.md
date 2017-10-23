@@ -80,8 +80,8 @@ The control and simulation program is written in C. The code is available under 
 | --- | --- | --- |
 | libxml2 | | configuration files |
 | ncurses, cdk | | configuration menu |
-| OpenGL ES, EGL | Raspberry Pi VideoCore APIs | visualization |
-| GSL | GSL – Ordinary Differential Equations | ODE-solver |
+| OpenGL ES, EGL | [Raspberry Pi VideoCore APIs](https://elinux.org/Raspberry_Pi_VideoCore_APIs) | visualization |
+| GSL | [GSL – Ordinary Differential Equations](https://www.gnu.org/software/gsl/doc/html/ode-initval.html) | ODE-solver |
 
 
 At startup the program is in configuration mode. Positioning, lengths and initial angle of displacement can be adjusted and saved via keyboard entry.
