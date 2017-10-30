@@ -1,0 +1,8 @@
+SUBSYSTEM=="gpio", ACTION=="add", PROGRAM="/bin/sh -c 'chown -R pen:root /sys%p'" \
+	PROGRAM="/bin/sh -c 'chown -R pen:root /sys/class/gpio'"
+#	PROGRAM="/bin/sh -c 'chown -R pen:root /sys/devices/virtual/gpio'"
+
+SUBSYSTEM=="subsystem", KERNEL=="gpio", ACTION=="add", PROGRAM="/bin/sh -c 'chown -R pen:root /sys%p'" \
+	PROGRAM="/bin/sh -c 'chown -R pen:root /sys/class/gpio'"
+#	PROGRAM="/bin/sh -c 'chown -R pen:root /sys/devices/virtual/gpio'"
+

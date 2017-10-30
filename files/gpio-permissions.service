@@ -1,0 +1,12 @@
+[Unit]
+Description=Set GPIO Permissions
+After=systemd-udevd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c "/usr/bin/echo -n 17 > /sys/class/gpio/export && sleep 1 && /usr/bin/echo -n out > /sys/class/gpio/gpio17/direction"
+#ExecStart=/usr/bin/bash -c "/usr/bin/echo -n out > /sys/class/gpio/gpio17/direction"
+
+[Install]
+WantedBy=multi-user.target
+

@@ -89,3 +89,8 @@ At startup the program is in configuration mode. Positioning, lengths and initia
 After triggering the simulation (and concurrent release of the magnet) alternating the pendulum equation is solved up to a precalculated time point and the displacement of the pendulum is drawn on the screen (realtime simulation).
 
 When the simulation is canceled the program returns to its configuration mode.
+
+## Notes
+
+- The Raspberry Pi must run in fullscreen mode. In "/boot/config.txt" set "disable_overscan=1".
+- The actual with of the computer screen should be set in the XML config files.

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see function "load_configuration" in "par.c" and/or "par.h" -->
+<pendulum name="Earth damped pointmass">
+<geometry>
+	<suspension_x unit="relative to center">0.0</suspension_x>
+	<suspension_y unit="relative to center">0.775</suspension_y>
+	<screen_width unit="m">0.53</screen_width>
+</geometry>
+<environment>
+	<gravity name="gravity of earth" symbol="g" unit="m/s/s">9.81179</gravity>
+	<!--<density name="density of air" symbol="rho" unit="kg/m/m/m">0</density>-->
+</environment>
+<bearing>
+	<friction_constant name="constant friction coefficient" symbol="mu0" unit="">0.000045</friction_constant>
+	<friction_linear name="linear friction coefficient" symbol="mu1" unit="">0.0000052</friction_linear>
+	<friction_quadratic name="quadratic friction coefficient" symbol="mu2" unit="">0.0000052</friction_quadratic>
+</bearing>
+<rod>
+	<length name="length rod" symbol="l_r" unit="m">0.21</length>
+	<mass name="mass of rod" symbol="m_r" unit="kg">0.0046</mass>
+</rod>
+<bob>
+	<radius name="radius of bob" symbol="r_b" unit="m">0.01</radius>
+	<mass name="mass of bob" symbol="m_b" unit="kg">0.03265</mass>
+</bob>
+<solver>
+	<initialstep>1.0e-4</initialstep>
+	<maxstep>1.0e-2</maxstep>
+	<relerr>1.0e-6</relerr>
+	<abserr>1.0e-6</abserr>
+	<substeps>100</substeps>
+	<!-- number of substeps for non-adaptive fixed-step solvers -->
+	<adaptive>true</adaptive>
+	<!-- use an adaptive solver algorithm, this might not work for all solvers (steppers) -->
+	<stepper>rk4</stepper>
+	<!-- [SOURCE: GSL DOCUMENTATION]
+	# rk4
+	Explicit 4th order (classical) Runge-Kutta. Error estimation is carried out by the step doubling method. For more efficient estimate of the error, use the embedded methods described below. 
+	# rkf45
+	Explicit embedded Runge-Kutta-Fehlberg (4, 5) method. This method is a good general-purpose integrator. 
+	# rk8pd
+	Explicit embedded Runge-Kutta Prince-Dormand (8, 9) method. 
+	# adams
+	A variable-coefficient linear multistep Adams method in Nordsieck form. This stepper uses explicit Adams-Bashforth (predictor) and implicit Adams-Moulton (corrector) methods in P(EC)^m functional iteration mode. Method order varies dynamically between 1 and 12.
+	-->
+</solver>
+<model>
+	<initial_angle>-1.0</initial_angle>
+	<!-- the initial condition -->
+	<linear>false</linear>
+	<!-- use the linearised equation -->
+	<pointmass>true</pointmass>
+	<!-- neglet the distribution of mass, use simple pointmasses for calculating the moment of inertia -->
+	<gyration>false</gyration>
+	<!-- honour center of gyration/oscillation --> 
+</model>
+</pendulum>
